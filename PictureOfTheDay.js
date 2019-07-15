@@ -11,7 +11,7 @@ class PictureOfTheDay extends React.Component {
     };
   }
   async componentDidMount() {
-    const apiKey = "Hhm2bGSOeSRe71a5fmFvpPJ2RUkoDtxjjZKICZCt";
+    const apiKey = "";
     const url = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}`;
     await axios.get(url).then(response => {
       this.setState({
