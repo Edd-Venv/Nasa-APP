@@ -18,22 +18,17 @@ class Search extends React.Component {
   }
 
   handleChangeSD = event => {
-    //console.log(this.state.value);
     this.setState({ value: event.target.value });
   };
 
   handleSubmitSD = event => {
     event.preventDefault();
-    //console.log("Clicked");
     const SearchData = this.state;
-    const apiKey = "Hhm2bGSOeSRe71a5fmFvpPJ2RUkoDtxjjZKICZCt";
+    const apiKey = "";
     const urlSD = `https://www.neowsapp.com/rest/v1/neo/browse?page=${
       this.state.value
     }&size=20&api_key=${apiKey}`;
     axios.get(urlSD).then(response => {
-      //const date = [this.state.value];
-      //console.log(response.data.links);
-      //console.log(date);
       this.setState({
         SearchData: response.data.near_earth_objects[0],
         isLoaded: true,
@@ -86,10 +81,6 @@ class Search extends React.Component {
     });
   };
 
-  /*
-  <br />
-  Relative Velocity: {SearchData.kilometers_per_second} (km/s)
-  <br />*/
 
   render() {
     const {
