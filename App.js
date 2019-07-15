@@ -2,7 +2,6 @@ import React from "react";
 import axios from "axios";
 import "./App.css";
 import PictureOfTheDay from "./components/PictureOfTheDay.js";
-import MySlider from "./components/MySlider.js";
 import Search from "./components/Search.js";
 import Footer from "./components/Footer";
 
@@ -16,7 +15,7 @@ class App extends React.Component {
     };
   }
   async componentDidMount() {
-    const apiKey = "Hhm2bGSOeSRe71a5fmFvpPJ2RUkoDtxjjZKICZCt";
+    const apiKey = "";
     const url = `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=${apiKey}`;
 
     await axios
@@ -62,7 +61,6 @@ class App extends React.Component {
                 })}
               </div>
               <Footer />
-              <MySlider />
             </React.Fragment>
           )}
         </div>
